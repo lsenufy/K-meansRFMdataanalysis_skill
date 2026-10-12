@@ -1,0 +1,23 @@
+{
+  "input": {"path": "customer_rfm.csv", "level": "customers", "encoding": "utf-8-sig"},
+  "columns": {"customer_id": "customer_id", "recency_days": "recency_days", "frequency": "frequency", "monetary": "monetary"},
+  "currency": "DEMO_UNIT",
+  "negative_monetary": "keep",
+  "rfm": {
+    "score_levels": 5,
+    "fm_rounding": "floor",
+    "scoring": {"r": {"method": "percentile"}, "f": {"method": "percentile"}, "m": {"method": "percentile"}},
+    "segmentation": {"mode": "shopify"}
+  },
+  "kmeans": {
+    "k": 3,
+    "candidates": [2, 3, 4, 5],
+    "random_state": 42,
+    "n_init": 20,
+    "seeds": [0, 7, 21, 101],
+    "transforms": "auto",
+    "scaler": "standard",
+    "silhouette_sample_size": 3000
+  },
+  "baseline": {"budgets": [0.1, 0.2, 0.3], "budget_is_business": false, "historical_priority_rule": "monetary_desc", "random_seed": 42}
+}

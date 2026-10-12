@@ -1,0 +1,4 @@
+interface:
+  display_name: "K-meansRFMdataanalysis"
+  short_description: "独立判断，补充调整先确认；参考Shopify与三项K诊断并做三轮自检"
+  default_prompt: "请使用 $k-means-rfm-dataanalysis 独立探索和判断，参考Shopify与肘部/轮廓/ARI完成五阶段分析；补充或调整工作先询问我，批准后独立目录探索，最终至少三轮有证据自检。"

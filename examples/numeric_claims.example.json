@@ -1,0 +1,7 @@
+{
+  "claims": [
+    {"id": "demo.customer_count", "file": "customer_labels.csv", "column": "*", "aggregation": "count", "expected": 24, "tolerance": 0},
+    {"id": "demo.total_monetary", "file": "customer_labels.csv", "column": "Monetary", "aggregation": "sum", "expected": 30645, "tolerance": 0.000001},
+    {"id": "demo.total_frequency", "file": "customer_labels.csv", "column": "Frequency", "aggregation": "sum", "expected": 120, "tolerance": 0}
+  ]
+}

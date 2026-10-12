@@ -1,0 +1,33 @@
+{
+  "input": {"path": "customer_rfm.csv", "level": "customers", "encoding": "utf-8-sig"},
+  "columns": {
+    "customer_id": "customer_id",
+    "recency_days": "days_since_last_purchase",
+    "frequency": "valid_order_count",
+    "monetary": "net_spend"
+  },
+  "currency": "请填入实际金额单位",
+  "invalid_rows": "error",
+  "negative_monetary": "keep",
+  "rfm": {
+    "score_levels": 5,
+    "fm_rounding": "none",
+    "scoring": {"r": {"method": "percentile"}, "f": {"method": "percentile"}, "m": {"method": "percentile"}},
+    "segmentation": {"mode": "generic_matrix"}
+  },
+  "kmeans": {
+    "candidates": [2, 3, 4, 5, 6, 7, 8, 9],
+    "random_state": 42,
+    "n_init": 20,
+    "seeds": [0, 7, 21, 101],
+    "transforms": "auto",
+    "scaler": "standard",
+    "silhouette_sample_size": 3000
+  },
+  "baseline": {
+    "budgets": [0.1, 0.2, 0.3],
+    "budget_is_business": false,
+    "historical_priority_rule": "monetary_desc",
+    "random_seed": 42
+  }
+}
